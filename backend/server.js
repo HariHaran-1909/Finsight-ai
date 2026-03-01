@@ -58,7 +58,7 @@ app.post("/analyze", async (req, res) => {
     }
 
     const mlResponse = await axios.post(
-      "http://localhost:8000/predict",
+      "http://127.0.0.1:8000/predict",
       data
     );
 
@@ -73,6 +73,13 @@ app.post("/analyze", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
+});
+
+const frontendPath = path.join(__dirname, "../frontend/build");
+app.use(express.static(frontendPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 app.listen(5000, () => console.log("🚀 Node server running on 5000"));
