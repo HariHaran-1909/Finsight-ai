@@ -3,7 +3,6 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 import pickle
 
-# Generate synthetic training data
 np.random.seed(42)
 
 data = []
