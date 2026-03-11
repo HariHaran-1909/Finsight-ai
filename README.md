@@ -28,30 +28,30 @@ FinSight AI is a full-stack personal finance management platform where users can
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                         USER BROWSER                            │
-│                    React Frontend (:3000)                        │
+│                    React Frontend (:3000)                       │
 │         Login → Setup → Dashboard (Charts, Score, Alerts)       │
 └────────────────────────────┬────────────────────────────────────┘
                              │ HTTP (Axios + JWT)
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Node.js + Express (:5000)                     │
-│                                                                  │
+│                    Node.js + Express (:5000)                    │
+│                                                                 │
 │   /api/auth          →  Register / Login (bcrypt + JWT)         │
 │   /api/expenses      →  Setup / Add / Dashboard                 │
-│                                                                  │
+│                                                                 │
 │   authMiddleware     →  JWT Token Verification                  │
 └──────────┬──────────────────────────┬───────────────────────────┘
            │ Mongoose ODM             │ Axios HTTP
            ▼                          ▼
 ┌──────────────────────┐   ┌──────────────────────────────────────┐
-│  MongoDB Community   │   │        Python Flask ML (:8000)        │
-│  localhost:27017     │   │                                       │
-│                      │   │  POST /predict                        │
-│  Collections:        │   │  Input: income, expenses,             │
-│  - users             │   │         savings_ratio                 │
-│  - monthlysetups     │   │  Output: credit score, risk band,     │
-│  - expenses          │   │          suggestions                  │
-└──────────────────────┘   │  Model: RandomForest (model.pkl)      │
+│  MongoDB Community   │   │        Python Flask ML (:8000)       │
+│  localhost:27017     │   │                                      │
+│                      │   │  POST /predict                       │
+│  Collections:        │   │  Input: income, expenses,            │
+│  - users             │   │         savings_ratio                │
+│  - monthlysetups     │   │  Output: credit score, risk band,    │
+│  - expenses          │   │          suggestions                 │
+└──────────────────────┘   │  Model: RandomForest (model.pkl)     │
                            └──────────────────────────────────────┘
 ```
 
@@ -88,11 +88,11 @@ finsight-ai/
 │   └── server.js               # Entry point
 │
 ├── ml/                         # Python ML Service
-│   ├── app.py                  # Flask prediction API
-│   ├── train_model.py          # Model training script
-│   └── model.pkl               # Trained RandomForest model
-│
-└── data/                       # (legacy) JSON data store
+    ├── app.py                  # Flask prediction API
+    ├── train_model.py          # Model training script
+    └── model.pkl               # Trained RandomForest model
+
+
 ```
 
 ---
