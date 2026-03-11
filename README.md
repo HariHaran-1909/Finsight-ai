@@ -119,7 +119,7 @@ finsight-ai/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/finsight-ai.git
+git clone https://github.com/HariHaran-1909/finsight-ai.git
 cd finsight-ai
 ```
 
